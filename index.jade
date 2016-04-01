@@ -1,0 +1,122 @@
+// CMPE 239 Sentiment Analysis UI
+
+doctype html
+html
+	head
+		title Twitter Sentiment Analysis
+		link(href='/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+		link(href='/css/custom.css',rel='stylesheet', type='text/css')
+		link(href='/css/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+		link(href='/css/styles.css', rel='stylesheet')
+		style.
+			img{
+			width: 100%;
+			height: auto;
+			}
+
+	body(onload = 'window.scroll(0,0)')
+		.loader 
+		.container
+			div(style='text-align: center')
+				img(src="/public/img/wordcloud_1.png")
+			.spacer
+			.row
+				a.btn.btn-info.btn-lg(target='_blank' href='https://en.wikipedia.org/wiki/Sentiment_analysis' title='What is sentiment analysis?')
+					i.fa.fa-question.fa-lg
+				.col-sm-6.col-sm-offset-3.text-center
+					h1 TWITTER SENTIMENT ANALYSIS
+					#stop
+						form#stopForm
+							.form-group
+								label 
+									#status
+							button.btn.btn-danger(type='submit') Stop
+					#search
+						form#searchForm.form-inline
+							.form-group
+									input#topic.form-control(type='text',placeholder='Enter Keyword', required, autofocus)
+							.form-group
+								button.btn.btn-primary(type='submit')
+									span.glyphicon.glyphicon-search
+			.spacer
+			.spacer		
+
+			.row
+				//Line Chart
+				#lineChart.chart
+				h4#tweet.text-center.text-info
+
+			.spacer
+			.spacer
+
+			.row
+				//Pie Chart
+				#pieChart.pieC.col-sm-6
+
+				//Column Chart
+				#columnChart.colC.col-sm-6
+			.spacer
+			.spacer
+			.row
+				//Sentiment Table
+				#currentScore.col-md-6.col-md-offset-3
+					h4.text-center SENTIMENT SCORE SHEET    
+						| 
+						i.fa.fa-table
+					table.table.table-condensed.table-bordered
+						tr
+							td 
+								b TOTAL TWEETS
+							td
+								p#totalTweet 0 
+						tr
+							td 
+								b # of POSITIVE
+							td
+								p#positiveTweet 0
+						tr
+							td 
+								b # of NEGATIVE
+							td
+								p#negativeTweet 0
+						tr
+							td 
+								b # of NEUTRAL
+							td
+								p#neutralTweet 0
+						tr
+							td 	
+								b SENTIMENT SCORE
+							td
+								p#sentimentScore 0
+			.spacer
+			.spacer
+			.spacer
+			section
+				.text-center
+					h2 Real-Time Geolocation Sentiment Analysis			
+				.top-doors
+					.hole
+						.door.top
+						.door.bottom
+						.text-center
+							a.btn.btn-primary.btn-lg(target='_blank' href='http://twitterglobe.cfapps.io/' title='Global Twitter Sentiments')
+								| Global Tweets  
+								span.glyphicon.glyphicon-globe
+		footer
+			| Prakash Kurup | SJSU - Fall 2015
+			|	
+			a.btn.btn-primary.btn-xs(target='_blank' href='https://www.linkedin.com/in/kurupprakash') 
+				i.fa.fa-linkedin.fa-fw
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+	script(src='/socket.io/socket.io.js')
+
+	script(src='https://code.highcharts.com/highcharts.js')
+	script(src='https://code.highcharts.com/highcharts-3d.js')			
+	script(src='https://code.highcharts.com/modules/exporting.js')
+	
+	//Load theme and charts
+	script(src='/js/chartTheme.js')
+	script(src='/js/charts.js')
+
+
