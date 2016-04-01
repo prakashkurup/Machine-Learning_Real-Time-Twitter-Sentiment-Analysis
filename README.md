@@ -1,4 +1,4 @@
-# CMPE 239 - Sentiment Analysis on Twitter Stream 
+# Sentiment Analysis on Real-Time Twitter Stream
 
 # Install Dependencies
 npm install
