@@ -43,10 +43,10 @@ server.listen(port, function(){
 
 //Setup Twitter API keys
 var twit = new Twitter({
-	consumer_key: "Ath1M8bPD42sGHGbr53OzMspW",
-	consumer_secret: "eWPvu7GkjOmnPja5AaQF12iOcvg1GTuAiKmpzn7f1VNHALAQfN",
-	access_token_key: "2930572291-gVxVAOHmiLMyzfwrypSPMkHdTBtsNV5N2tGgImW",
-	access_token_secret: "LsMcUFr4mzSjcTRQud5FEhS53rjW5Mu0Rbplp8AcgGznl"
+	consumer_key: " ",
+	consumer_secret: " ",
+	access_token_key: " ",
+	access_token_secret: " "
 });
 
 //Setup database
